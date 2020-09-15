@@ -101,6 +101,18 @@ custom_holidays:
     description: "Some day this year only"
 ```
 
+Version 1.3 and later support ignoring holidays.
+```
+# You can get a list of available holidays by running the following, updated to your location
+# >>> for date, name in sorted(holidays.US(state='CA', years=2014).items()):
+# >>>     print(date, name)
+ignored_holidays:
+  - 'Susan B. Anthony Day'
+  - 'Washington's Birthday'
+  - 'César Chávez Day'
+  - 'Veterans Day'
+```
+
 Then configure Prometheus to scrape your server:
 ```
 - job_name: holiday_exporter
